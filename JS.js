@@ -31,25 +31,19 @@ if (currentMin < 10) {
 let newTimer = document.querySelector("#time");
 newTimer.innerHTML = `${currentHour}:${currentMin}`;
 
-function convertToCel(event) {
-  event.preventDefault();
-  let changeChange = document.querySelector("#mainTemp");
-  changeChange.innerHTML = 32;
-}
-
-function convertToFah(event) {
-  event.preventDefault();
-  let changeChange = document.querySelector("#mainTemp");
-  changeChange.innerHTML = 89.6;
-}
-
 let degCel = document.querySelector("#cDeg");
 degCel.addEventListener("click", convertToCel);
 
 let degFah = document.querySelector("#dDeg");
 degFah.addEventListener("click", convertToFah);
 
+
 function displayWeatherCondition(response) {
+   newTemperature =  Math.round(
+    response.data.main.temp
+  ); 
+
+
   document.querySelector("#displaycity").innerHTML = response.data.name;
   document.querySelector("#mainTemp").innerHTML = Math.round(
     response.data.main.temp
@@ -59,7 +53,25 @@ function displayWeatherCondition(response) {
     response.data.wind.speed
   );
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.src = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
+
+  console.log(`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+  // iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+}
+
+
+function convertToCel(event) {
+  event.preventDefault();
+  let changeChange = document.querySelector("#mainTemp");
+  changeChange.innerHTML = temp;
+}
+
+function convertToFah(event) {
+
+  console.log('convertToFah',temp)
+  event.preventDefault();
+  let changeChange = document.querySelector("#mainTemp");
+  changeChange.innerHTML = temp;
 }
 
 function search(city) {
