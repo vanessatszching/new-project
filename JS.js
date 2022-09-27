@@ -62,14 +62,14 @@ function displayWeatherCondition(response) {
 
 function convertToCel(event) {
   event.preventDefault();
-  let changeChange = document.querySelector("#mainTemp");
-  changeChange.innerHTML = newTemperature;
+  let convertCelButton = document.querySelector("#mainTemp");
+  convertCelButton.innerHTML = newTemperature;
 }
 
 function convertToFah(event) {
   event.preventDefault();
-  let changeChange = document.querySelector("#mainTemp");
-  changeChange.innerHTML = newTemperature;
+  let convertFehButton = document.querySelector("#mainTemp");
+  convertFehButton.innerHTML = `(${newTemperature}*9/5)+32`;
  
 }
 
