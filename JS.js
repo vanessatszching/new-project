@@ -60,19 +60,19 @@ function displayWeatherCondition(response) {
 }
 
 
-function convertToCel(event) {
-  event.preventDefault();
-  let changeChange = document.querySelector("#mainTemp");
-  changeChange.innerHTML = temp;
-}
+// function convertToCel(event) {
+//   event.preventDefault();
+//   let changeChange = document.querySelector("#mainTemp");
+//   changeChange.innerHTML = temp;
+// }
 
-function convertToFah(event) {
+// function convertToFah(event) {
 
-  console.log('convertToFah',temp)
-  event.preventDefault();
-  let changeChange = document.querySelector("#mainTemp");
-  changeChange.innerHTML = temp;
-}
+//   console.log('convertToFah',temp)
+//   event.preventDefault();
+//   let changeChange = document.querySelector("#mainTemp");
+//   changeChange.innerHTML = temp;
+// }
 
 function search(city) {
   let apiKey = "451c470249e1c41dd7797fb37a578f84";
