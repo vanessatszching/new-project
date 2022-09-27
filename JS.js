@@ -67,11 +67,10 @@ function convertToCel(event) {
 }
 
 function convertToFah(event) {
-
-  console.log('convertToFah',temp)
   event.preventDefault();
   let changeChange = document.querySelector("#mainTemp");
-  changeChange.innerHTML = temp;
+  changeChange.innerHTML = (((newTemperature*9)/5) + 32);
+  
 }
 
 function search(city) {
