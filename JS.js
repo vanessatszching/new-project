@@ -69,7 +69,7 @@ function convertToCel(event) {
 function convertToFah(event) {
   event.preventDefault();
   let changeChange = document.querySelector("#mainTemp");
-  changeChange.innerHTML = {`${newTemperature}*9/5)+32`};
+  changeChange.innerHTML = newTemperature;
  
 }
 
