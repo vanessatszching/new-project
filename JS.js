@@ -63,7 +63,7 @@ function displayWeatherCondition(response) {
 function convertToCel(event) {
   event.preventDefault();
   let changeChange = document.querySelector("#mainTemp");
-  changeChange.innerHTML = temp;
+  changeChange.innerHTML = newTemperature;
 }
 
 function convertToFah(event) {
