@@ -32,20 +32,6 @@ let newTimer = document.querySelector("#time");
 newTimer.innerHTML = `${currentHour}:${currentMin}`;
 
 
-function convertToCel(event) {
-  event.preventDefault();
-  let changeChange = document.querySelector("#mainTemp");
-  changeChange.innerHTML = newTemperature;
-}
-
-function convertToFah(event) {
-  event.preventDefault();
-  let changeChange = document.querySelector("#mainTemp");
-  changeChange.innerHTML = {`${newTemperature}*9/5)+32`};
- 
-}
-
-
 let degCel = document.querySelector("#cDeg");
 degCel.addEventListener("click", convertToCel);
 
@@ -74,9 +60,18 @@ function displayWeatherCondition(response) {
   // iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
+function convertToCel(event) {
+  event.preventDefault();
+  let changeChange = document.querySelector("#mainTemp");
+  changeChange.innerHTML = newTemperature;
+}
 
-
-
+function convertToFah(event) {
+  event.preventDefault();
+  let changeChange = document.querySelector("#mainTemp");
+  changeChange.innerHTML = {`${newTemperature}*9/5)+32`};
+ 
+}
 
 
 function search(city) {
