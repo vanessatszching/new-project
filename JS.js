@@ -31,6 +31,21 @@ if (currentMin < 10) {
 let newTimer = document.querySelector("#time");
 newTimer.innerHTML = `${currentHour}:${currentMin}`;
 
+
+function convertToCel(event) {
+  event.preventDefault();
+  let changeChange = document.querySelector("#mainTemp");
+  changeChange.innerHTML = newTemperature;
+}
+
+function convertToFah(event) {
+  event.preventDefault();
+  let changeChange = document.querySelector("#mainTemp");
+  changeChange.innerHTML = `(${newTemperature}*9/5) + 32)`;
+ 
+}
+
+
 let degCel = document.querySelector("#cDeg");
 degCel.addEventListener("click", convertToCel);
 
@@ -60,18 +75,9 @@ function displayWeatherCondition(response) {
 }
 
 
-function convertToCel(event) {
-  event.preventDefault();
-  let changeChange = document.querySelector("#mainTemp");
-  changeChange.innerHTML = newTemperature;
-}
 
-function convertToFah(event) {
-  event.preventDefault();
-  let changeChange = document.querySelector("#mainTemp");
-  changeChange.innerHTML = (((newTemperature*9)/5) + 32);
-  
-}
+
+
 
 function search(city) {
   let apiKey = "451c470249e1c41dd7797fb37a578f84";
