@@ -54,10 +54,9 @@ function displayWeatherCondition(response) {
     response.data.wind.speed
   );
   let iconElement = document.querySelector("#icon");
-  iconElement.src = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
-
-  console.log(`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
-  // iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("alt", repsonse. data.weather[0].description);
+  searchLocation(response.data.coords)
 }
 
 function convertToCel(event) {
