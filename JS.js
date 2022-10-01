@@ -31,27 +31,39 @@ if (currentMin < 10) {
 let newTimer = document.querySelector("#time");
 newTimer.innerHTML = `${currentHour}:${currentMin}`;
 
+function formatDay(timestamp){
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"]
+
+  return days[day];
+}
+
 function displayForecast(response){
-  console.log(response.data.daily);
+  let forecast = response.data.daily
+
+
   let forecastElement = document.querySelector("#forecast");
 
-  let weeks = ["Friday","Saturday","Sunday","Monday","Tuesday"];
+  
 
-  let forecastHTML = `<div class="col-sm">`;
-  weeks.forEach(function(week){
+  let forecastHTML = `<div class="row>`;
+  weeks.forEach(function(forecastDay, index){
+    if (index < 6) {
     forecastHTML = 
       forecastHTML + `
         <div class="col-sm">
-          <div class="weather-forecast-date">${week}</div>
+          <div class="weather-forecast-date">${formatDate(forecastDay.dt)}</div>
             <img
-            src="http://openweathermap.org/img/wn/50d@2x.png" style="height:50%; width:50%"/>
+            src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" style="height:50%; width:50%"/>
           
-            <div class="weather-forecast-temperatures">
-            <span class="weather-forecast-temparture-max">18°C</span>
-            <span class = "weather-forecast-temperature-min">12°C</span>
+            <div class="weather-forecast-temperature">
+            <span class="weather-forecast-temparture-max">${Math.round(forecastDay.temp.max)}°C</span>
+            <span class = "weather-forecast-temperature-min">${Math.round(forecastDay.temp.min)}°C</span>
             </div>
           </div>
         </div>`;
+    }
   });
   
   
