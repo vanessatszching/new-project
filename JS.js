@@ -35,11 +35,11 @@ newTimer.innerHTML = `${currentHour}:${currentMin}`;
 function displayForecast(){
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row">`;
-  let weeks = ["Friday","Saturday","Sunday"];
+  let forecastHTML = `<div class="col-sm">`;
+  let weeks = ["Friday","Saturday","Sunday","Monday","Tuesday"];
   weeks.forEach(function(week){
     forecastHTML = forecastHTML + `
-        <div class="col-2">
+        <div class="col-sm">
           <div class="weather-forecast-date">${week}</div>
             <img
             src="http://openweathermap.org/img/wn/50d@2x.png" style="height:50%; width:50%"/>
