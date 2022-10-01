@@ -78,7 +78,7 @@ function getForecast(coordinates){
   axios.get(apiUrl).then(displayForecast);
 }
 
-displayForecast();
+// displayForecast();
 
 
 let degCel = document.querySelector("#cDeg");
