@@ -140,8 +140,8 @@ div.backDrop {
 
 
 #forecast{
-  display: flex;
-  flex-grow: 1;
+  display: inline-block;
+  /* flex-grow: 1; */
   justify-content: center;
   position: absolute;
   top: 330px;
