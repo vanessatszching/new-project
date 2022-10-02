@@ -161,3 +161,4 @@ let currentLocationButton = document.querySelector("#currentLocationButton");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 
+search("Hong Kong");
