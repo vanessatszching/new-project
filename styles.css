@@ -140,14 +140,15 @@ div.backDrop {
 
 
 #forecast{
-  display: inline-block;
+  display: flex;
   /* flex-grow: 1; */
+  max-width: 700px;
   justify-content: center;
-  position: absolute;
-  top: 330px;
+  position: relative;
+  top: 200px;
   left: 150px;
-  align-items: center;
-  text-align: center;
+  /* align-items: center; */
+  /* text-align: center; */
 
 }
 /* .container {
